@@ -12,6 +12,8 @@ main() {
 
     # wait for daemon stopping
     wait
+
+    rm ./tmp/pids/server.pid
 }
 
 signal_handler() {
