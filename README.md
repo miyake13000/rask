@@ -1,11 +1,14 @@
 # rask
 ## Setup by Docker
+### Prerequisites
+1. Docker is installed
 ### Build
-Execute below command in rask repository
-1. `$ docker build -t rask .`
-2. `$ docker run -d -p 3000:3000 --name rask -v $(pwd):/rask rask && docker stop rask`
+1. Execute below command in rask repository  
+`$ docker build -t rask .`
 ### Run
 1. Start rask server  
-`$ docker start rask`
+`$ ./rask-docker.sh start`
 2. Stop rask server  
-`$ docker stop rask`
+`$ ./rask-docker.sh stop`
+3. Enter container  
+`$ ./rask-docker.sh bash`
