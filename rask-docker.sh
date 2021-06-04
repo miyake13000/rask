@@ -1,12 +1,10 @@
 #!/bin/bash
 
 #This script only works under below conditions
-# 1. finish to install and set up sheetq
-# 2. environmental variable is written to "rask/.env"
-# 3. Docker is installed
+# 1. Docker is installed
 
 function usage(){
-cat <<_EOT_
+    cat <<_EOT_
 rask-docker.sh
 
 Usage:
@@ -19,9 +17,10 @@ Options:
     start      start rask on container
     stop       stop rask
     status     show rask's condition
+    restart    stop and restart container
+    update     update container image
     help       show this usage
-    bash       execute bash in container
-               container automatically removed when cotanier finished
+    [command]  execute [command] in container
 _EOT_
 }
 
@@ -36,23 +35,29 @@ function main(){
     case "$1" in
         start)
             start
-        ;;
-        bash)
-            start_with_bash
-        ;;
+            ;;
         stop)
             stop
-        ;;
+            ;;
         status)
             status
-        ;;
+            ;;
+        restart)
+            restart
+            ;;
+        update)
+            update
+            ;;
         help)
             usage
-        ;;
-        *)
+            ;;
+        "")
             usage >&2
             exit 1
-        ;;
+            ;;
+        *)
+            start_with_command "$1"
+            ;;
     esac
     return 0
 }
@@ -69,8 +74,7 @@ function start(){
         echo "rask has already runnning"
     else
         echo -n "try to start rask..."
-        docker run -d --name rask -p 3000:3000 \
-            -v $PWD:/rask rask > /dev/null
+        docker run -d --name rask -p 3000:3000 -v $PWD:/rask rask > /dev/null
         if [ $? = 0 ]; then
             echo "done."
         else
@@ -79,12 +83,12 @@ function start(){
     fi
 }
 
-function start_with_bash(){
+function start_with_command(){
     if is_container_running rask; then
         echo "rask has already runnning"
     else
-        docker run --rm -it --name rask -p 3000:3000 \
-            -v $PWD:/rask rask bash
+        docker run -it --name rask -p 3000:3000 \
+            -v $PWD:/rask rask "$1"
     fi
 }
 
@@ -108,6 +112,25 @@ function status(){
         echo "running"
     else
         echo "stop"
+    fi
+}
+
+function restart(){
+    if is_container_running rask; then
+        stop
+        start
+    else
+        echo "rask is not runnning"
+    fi
+}
+
+function update(){
+    if is_container_running rask; then
+        echo -n "try to update rask container..."
+        docker commit rask rask > /dev/null
+        echo "done"
+    else
+        echo "rask container does not exist"
     fi
 }
 

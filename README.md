@@ -12,3 +12,9 @@
 `$ ./rask-docker.sh stop`
 3. Enter container  
 `$ ./rask-docker.sh bash`
+### Example
+1. Try to use new gem
+  * `echo "new_gem" >> Gemfile`
+  * `./rask-docker.sh bundle install`
+  * `./rask-docker.sh update`
+  * `./rask-docker.sh restart`
