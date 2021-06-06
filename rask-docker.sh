@@ -127,7 +127,7 @@ function restart(){
 function update(){
     if is_container_running rask; then
         echo -n "try to update rask container..."
-        docker commit rask rask > /dev/null
+        docker commit -c 'CMD ["/docker-entrypoint.sh"]' rask rask > /dev/null
         echo "done"
     else
         echo "rask container does not exist"
