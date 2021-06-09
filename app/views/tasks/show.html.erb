@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Registerdate:</strong>
+  <%= @task.registerdate %>
+</p>
+
+<p>
+  <strong>Duedate:</strong>
+  <%= @task.duedate %>
+</p>
+
+<p>
+  <strong>Task:</strong>
+  <%= @task.task %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= User.find_by_id(@task.user_id).name %>
+</p>
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'タスク一覧', tasks_path %> |
+<%= link_to 'ユーザ一覧', users_path %>
