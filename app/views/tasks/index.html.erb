@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tasks</h1>
-<%= link_to 'タスク新規登録', new_task_path %>
-|
-<%= link_to 'ユーザ一覧', "/users" %>
+<div class="add"><b>Tasks</b></div>
 
+<a href="/tasks/new" class="add"><i class="far fa-plus-square"></i></a>
+
+<div class="display">
 <table>
   <thead>
     <tr>
@@ -19,14 +19,19 @@
   <tbody>
     <% @tasks.each do |task| %>
       <tr>
+        <div class="text-input">
         <td style="white-space: nowrap;"><%= task.registerdate %></td>
         <td style="white-space: nowrap;"><%= task.duedate %></td>
         <td><%= task.task %></td>
         <td><%= link_to User.find_by_id(task.user_id)&.name, "/users/#{task.user_id}" %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><a href="<%= "tasks/#{task.id}" %>"><i class="far fa-eye"></i></a></td>
+        <td><a href="<%= edit_task_path(task) %>"><i class="fas fa-pen"></i></td>
+        <td><%= link_to task, method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <i class="fas fa-trash-alt"></i>
+          <% end %></td>
+        </div>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
