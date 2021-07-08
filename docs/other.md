@@ -1,5 +1,4 @@
 ## ライセンス
-
 Rask(以降，本プログラム)は MIT License のもので公開されています．
 Mit License の詳細は LICENSE ファイルをご確認ください．
 
