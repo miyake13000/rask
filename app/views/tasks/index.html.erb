@@ -24,7 +24,11 @@
         <td style="white-space: nowrap;"><%= task.registerdate %></td>
         <td style="white-space: nowrap;"><%= task.duedate %></td>
         <td><%= task.task %></td>
+        <% if User.find_by_id(task.user_id) %>
         <td><%= link_to User.find_by_id(task.user_id)&.name, "/users/#{task.user_id}" %></td>
+      <% elsif %>
+        <td></td>
+      <% end %>
         <td><a href="<%= "tasks/#{task.id}" %>"><i class="far fa-eye"></i></a></td>
         <td><a href="<%= edit_task_path(task) %>"><i class="fas fa-pen"></i></td>
         <td><%= link_to task, method: :delete, data: { confirm: 'Are you sure?' } do %>
