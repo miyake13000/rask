@@ -1,10 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<%= stylesheet_link_tag "custom", :media => "all" %>
+
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
-  <table>
+  <table class="flat_table">
   <thead>
   <tr>
   <th>Tasks</th>
@@ -19,6 +21,5 @@
   </tbody>
   </table>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'ユーザ一覧', users_path %> |
-<%= link_to 'タスク一覧', tasks_path %>
+  <br>
+  <a href="javascript:history.back();" class="btn-flat-border">戻る</a>

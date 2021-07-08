@@ -18,22 +18,27 @@
   </div>
   --->
 
-  <div class="field">
-    <%= form.label :duedate %>
-    <%= form.date_field :duedate %>
-  </div>
+  <table>
+    <tr>
+      <td><%= form.label :duedate %></td>
+      <td><%= form.date_field :duedate %></td>
+    </tr>
+    <tr>
+      <td><%= form.label :user_id %></td>
+      <td><%= form.select :user_id, User.all.to_a.map{|i| [i.name, i.id]}, include_blank: "選択してください"%></td>
+    </tr>
+  </table>
 
-  <div class="field">
+  <!--<div class="field">
+	<input class="ef" type="text" placeholder="">
+  </div>-->
+  <div class="cp_iptxt">
+    <%= form.text_field :task, class:"ef", placeholder:"" %>
     <%= form.label :task %>
-    <%= form.text_field :task %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.select :user_id, User.all.to_a.map{|i| [i.name, i.id]}, include_blank: "選択してください"%>
+	<span class="focus_line"></span>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit '作成', class:"form-flat-border" %>
   </div>
 <% end %>

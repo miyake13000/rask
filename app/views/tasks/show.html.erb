@@ -1,25 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Registerdate:</strong>
-  <%= @task.registerdate %>
-</p>
+<%= stylesheet_link_tag "custom", :media => "all" %>
+<table class="under_table">
+  <tr>
+    <th>Register Date</th>
+    <td><%= @task.registerdate%></td>
+  </tr>
+  <tr>
+    <th>Due Date</th>
+    <td><%= @task.duedate %></td>
+  </tr>
+  <tr>
+    <th>User</th>
+    <td><%= User.find_by_id(@task.user_id).name %></td>
+  </tr>
+  <tr>
+    <th>Task</th>
+    <td><%= @task.task %>
+  </tr>
+</table>
 
-<p>
-  <strong>Duedate:</strong>
-  <%= @task.duedate %>
-</p>
-
-<p>
-  <strong>Task:</strong>
-  <%= @task.task %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= User.find_by_id(@task.user_id).name %>
-</p>
-
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'タスク一覧', tasks_path %> |
-<%= link_to 'ユーザ一覧', users_path %>
+<br>
+<a href="javascript:history.back();" class="btn-flat-border">戻る</a>

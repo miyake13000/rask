@@ -11,12 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="cp_iptxt">
+    <%= form.text_field :name, class:"ef", placeholder:"" %>
     <%= form.label :name %>
-    <%= form.text_field :name %>
+	<span class="focus_line"></span>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit '作成', class:"form-flat-border" %>
   </div>
 <% end %>

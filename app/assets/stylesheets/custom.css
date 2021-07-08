@@ -1,0 +1,166 @@
+.btn-flat-border {
+  display: inline-block;
+  transition: .4s;
+  text-align: center;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: solid 2px #67c5ff;
+  border-radius: 3px;
+  transition: .4s;
+  width: 40px;
+  height: 20px;
+}
+
+.btn-flat-border:hover {
+  background: #67c5ff;
+  color: white;
+}
+
+.form-flat-border {
+  background-color: white;
+  text-align: center;
+  display: inline-block;
+  transition: .4s;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: solid 2px #67c5ff;
+  border-radius: 3px;
+  width: 75px;
+  height: 35px;
+}
+
+.form-flat-border:hover {
+  background: #67c5ff;
+  color: white;
+}
+
+
+.under_table{
+    border-collapse: separate;
+    border-spacing: 8px 0px;
+}
+
+.under_table th{
+  border-bottom: solid 2px #67c5ff;
+  padding: 10px 0;
+}
+
+.under_table td{
+  border-bottom: solid 2px #ddd;
+  padding: 10px 0;
+}
+
+
+.flat_table {
+    width: 99%;
+    table-layout: fixed;
+    border: none !important;
+    border-collapse: separate;
+    border-spacing: 2px 0px;
+}
+
+.table_box {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 600px;
+    border-collapse:separate;
+    border-spacing: 0;
+}
+
+.flat_table th:first-child{
+    border-radius: 6px 0 0 0;
+}
+
+.flat_table th:last-child{
+    border-radius: 0 6px 0 0;
+    border-left: 0.6px solid #ffffff;
+}
+
+.flat_table th{
+    text-align: center;
+    color:white;
+    /*background: linear-gradient(#86ace2,#0065f4);*/
+    background: #67c5ff;
+    border-left: 0.3px solid #ffffff;
+    width: 20%;
+    padding: 10px 0;
+}
+
+.flat_table td{
+    text-align: center;
+    border-left: 1px solid #c3c3c3;
+    border-bottom: 1px solid #c3c3c3;
+    border-top:none;
+    box-shadow: 0px -3px 8px 1px #eee inset;
+    width: 20%;
+    padding: 12px 0;
+    word-break: break-all;
+}
+
+.flat_table td:last-child{
+    border-right: 1px solid #c3c3c3;
+}
+
+.flat_table tr:last-child td:first-child {
+    border-radius: 0 0 0 5px;
+}
+
+.flat_table tr:last-child td:last-child {
+    border-radius: 0 0 5px 0;
+}
+
+.cp_iptxt {
+	position: relative;
+	width: 80%;
+	margin: 40px 3%;
+}
+.cp_iptxt input[type='text'] {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	letter-spacing: 1px;
+	padding-left: 4em;
+}
+.cp_iptxt input[type='text']:focus {
+	outline: none;
+}
+.ef {
+	padding: 4px 0;
+	border: 0;
+	border-bottom: 1px solid #67c5ff;
+	background-color: transparent;
+}
+.ef ~ .focus_line {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	transition: 0.4s;
+	background-color: #67c5ff;
+}
+.ef:focus ~ .focus_line,
+.cp_iptxt.ef ~ .focus_line {
+	width: 100%;
+	transition: 0.4s;
+}
+.ef ~ label {
+	position: absolute;
+	z-index: -1;
+	top: 4px;
+	left: 0;
+	width: 100%;
+	transition: 0.3s;
+	letter-spacing: 0.5px;
+	color: #aaaaaa;
+}
+.ef:focus ~ label, .cp_iptxt.ef ~ label {
+	font-size: 12px;
+	top: -16px;
+	transition: 0.3s;
+	color: #67c5ff;
+}

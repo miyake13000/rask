@@ -1,10 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<%= stylesheet_link_tag "custom", :media => "all" %>
+
 <div class="add"><b>Users</b></div>
 <a href="/users/new" class="add"><i class="far fa-plus-square"></i></a>
 
 <div class="display">
-<table>
+<table class="flat_table">
   <thead>
     <tr>
       <th>Name</th>

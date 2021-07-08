@@ -1,6 +1,7 @@
 <h1>Editing Task</h1>
+<%= stylesheet_link_tag "custom", :media => "all" %>
 
 <%= render 'form', task: @task %>
 
-<%= link_to 'Show', @task %> |
-<%= link_to 'Back', tasks_path %>
+<br>
+<a href="javascript:history.back();" class="btn-flat-border">戻る</a>
