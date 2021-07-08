@@ -8,8 +8,8 @@
   border: solid 2px #67c5ff;
   border-radius: 3px;
   transition: .4s;
-  width: 40px;
-  height: 20px;
+  width: 70px;
+  height: 40px;
 }
 
 .btn-flat-border:hover {
@@ -27,8 +27,8 @@
   color: #67c5ff;
   border: solid 2px #67c5ff;
   border-radius: 3px;
-  width: 75px;
-  height: 35px;
+  width: 70px;
+  height: 40px;
 }
 
 .form-flat-border:hover {
