@@ -19,7 +19,7 @@
 2. ユーザ一覧から更新したいユーザの鉛筆アイコンをクリック
 3. 新しいユーザ名を入力し，「作成」をクリック
 
-![edit_user](img/wdit_user.png)
+![edit_user](img/edit_user.png)
 
 ## ユーザの削除
 1. 右上の項目から「Users」をクリック
