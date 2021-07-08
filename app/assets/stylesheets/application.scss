@@ -2,10 +2,18 @@
 ** The Header Media Queries **
 ** Tweak as per your needs **
 */
+p { font-style: normal;
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+}
 .add {
   font-size: 50px ;
   float: left;
-  width: 12%;
+  width: auto;
+  margin-left: 5px;
 }
 .display {
   clear: both;
