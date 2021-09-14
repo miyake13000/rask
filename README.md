@@ -1,4 +1,7 @@
 # rask
+## Note
+This branch is the archive of old main branch.  
+This branch has no longer maintained.
 ## Setup by Docker
 ### Prerequisites
 1. Docker is installed
