@@ -2,18 +2,28 @@
 
 one:
   content: MyText
-  creator_id: 1
-  assigner_id : 1
-  due_at : 2021-07-16 12:22:22
+  user: one
+  assigner_id: one
+  due_at: 2021-07-16 12:22:22
   description: test
-  project_id : 1
-  task_state_id: 1
+  project_id : one
+  state: todo
 
 two:
   content: MyText
-  creator_id: 2
-  assigner_id : 1
-  due_at : 2021-07-16 12:22:22
+  user: one
+  assigner: two
+  due_at: 2021-07-16 12:22:22
   description: test
-  project_id : 2
-  task_state_id: 1
+  project: one
+  state: done
+
+task_has_tag:
+  id: 1
+  content: MyText
+  user: one
+  assigner: two
+  due_at: 2021-07-16 12:22:22
+  description: test
+  project: one
+  state: done

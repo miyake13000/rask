@@ -1,9 +1,16 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: 1
   name: Tag1
 
 two:
-  id: 2
   name: Tag2
+
+tag_has_task:
+  id: 1
+  name: tag_has_task
+    # tasks: one # FIXME: This syntax is currently not working for NotNullViolation exception for created_at column
+
+tag_has_document:
+  name: tag_has_document
+  documents: one
